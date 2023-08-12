@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div>
+    	<form method='POST'>
+    		{% csrf_token %}
+    		<fieldset class="form-group">
+    			<legend class="border-bottem mb-4">Register A Complaint</legend>
+    			{{ form | crispy}} <!--form.as_p:-it render the form into paragraph to come in aline and crispy is a 3rd party filter -->
+    			<div class="form-group">
+    			    <button type="submit" class="btn btn-outline-info">Post</button>
+    			</div>
+    		</fieldset>
+    		
+    	</form>
+    </div>
+{% endblock content %}

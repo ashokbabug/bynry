@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1 class="mb-3">Queries by {{ username }} </h1>
+
+  {% for problem in problems %}
+      
+
+    <div class="card m-5 " style="width: 50rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ problem.problem_type.type }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ problem.user.username }}</h6>
+          <p class="card-text">{{ problem.problem_description }}</p>
+          <small class="text-muted">Ceated At : {{ problem.created_at|date:"F d, y" }}</small>
+          <small class="text-muted">Resolved At : {{ problem.resolved_at|date:"F d, y" }}</small>
+        </div>
+      </div>
+
+      
+  {% endfor %}
+  
+{% endblock content %}
